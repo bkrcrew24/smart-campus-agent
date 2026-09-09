@@ -1,0 +1,278 @@
+{
+  "department": {
+    "id": "CSW",
+    "name": "컴퓨터소프트웨어학과",
+    "college": "공과대학"
+  },
+  "graduation_requirements": {
+    "total_credits": 130,
+    "breakdown": {
+      "major_required": 45,
+      "major_elective": 30,
+      "general_required": 15,
+      "general_elective": 15,
+      "free_elective": 25
+    },
+    "minimum_gpa": 2.0,
+    "required_certifications": [
+      { "name": "영어인증", "description": "공인영어성적(토익 600점 이상) 또는 교내 영어인증 과정 이수" },
+      { "name": "봉사활동", "description": "졸업 전 30시간 이상 봉사활동 이수" },
+      { "name": "캡스톤디자인", "description": "4학년 캡스톤디자인 과목 이수 필수" }
+    ]
+  },
+  "courses": [
+    {
+      "id": "GEN101",
+      "name": "대학글쓰기",
+      "credits": 2,
+      "category": "general_required",
+      "year": 1,
+      "semester": 1,
+      "prerequisites": [],
+      "description": "대학 수준의 논리적 글쓰기와 표현 능력을 배양하는 교양 과목",
+      "skills": ["논리적 사고", "문서 작성"]
+    },
+    {
+      "id": "GEN102",
+      "name": "영어커뮤니케이션1",
+      "credits": 2,
+      "category": "general_required",
+      "year": 1,
+      "semester": 1,
+      "prerequisites": [],
+      "description": "기초 영어 의사소통 능력을 향상하는 교양 과목",
+      "skills": ["영어 회화", "영어 독해"]
+    },
+    {
+      "id": "GEN103",
+      "name": "영어커뮤니케이션2",
+      "credits": 2,
+      "category": "general_required",
+      "year": 1,
+      "semester": 2,
+      "prerequisites": ["GEN102"],
+      "description": "심화 영어 의사소통 능력 과목",
+      "skills": ["영어 회화", "영어 작문"]
+    },
+    {
+      "id": "GEN201",
+      "name": "공학수학1",
+      "credits": 3,
+      "category": "general_required",
+      "year": 1,
+      "semester": 1,
+      "prerequisites": [],
+      "description": "공학 전반에 필요한 미적분학 및 선형대수학 기초",
+      "skills": ["수학적 사고", "미적분", "선형대수"]
+    },
+    {
+      "id": "GEN202",
+      "name": "공학수학2",
+      "credits": 3,
+      "category": "general_required",
+      "year": 1,
+      "semester": 2,
+      "prerequisites": ["GEN201"],
+      "description": "확률, 통계, 이산수학 기초",
+      "skills": ["확률", "통계", "이산수학"]
+    },
+    {
+      "id": "CSW101",
+      "name": "프로그래밍기초",
+      "credits": 3,
+      "category": "major_required",
+      "year": 1,
+      "semester": 1,
+      "prerequisites": [],
+      "description": "Python을 활용한 프로그래밍의 기본 개념(변수, 조건문, 반복문, 함수, 파일 I/O) 습득",
+      "skills": ["Python", "알고리즘 기초", "문제 해결"]
+    },
+    {
+      "id": "CSW102",
+      "name": "객체지향프로그래밍",
+      "credits": 3,
+      "category": "major_required",
+      "year": 1,
+      "semester": 2,
+      "prerequisites": ["CSW101"],
+      "description": "Java 기반 객체지향 설계 원칙(캡슐화, 상속, 다형성, 추상화) 학습",
+      "skills": ["Java", "OOP", "설계 패턴"]
+    },
+    {
+      "id": "CSW201",
+      "name": "자료구조",
+      "credits": 3,
+      "category": "major_required",
+      "year": 2,
+      "semester": 1,
+      "prerequisites": ["CSW101"],
+      "description": "배열, 연결리스트, 스택, 큐, 트리, 그래프 등 핵심 자료구조 구현 및 분석",
+      "skills": ["자료구조", "C/C++", "알고리즘 복잡도"]
+    },
+    {
+      "id": "CSW202",
+      "name": "알고리즘",
+      "credits": 3,
+      "category": "major_required",
+      "year": 2,
+      "semester": 2,
+      "prerequisites": ["CSW201", "GEN202"],
+      "description": "정렬, 탐색, 동적 프로그래밍, 그리디, 그래프 알고리즘 설계 및 분석",
+      "skills": ["알고리즘 설계", "복잡도 분석", "코딩테스트"]
+    },
+    {
+      "id": "CSW203",
+      "name": "데이터베이스",
+      "credits": 3,
+      "category": "major_required",
+      "year": 2,
+      "semester": 1,
+      "prerequisites": ["CSW102"],
+      "description": "관계형 데이터베이스 모델링, SQL, 정규화 및 트랜잭션 처리",
+      "skills": ["SQL", "DB 설계", "MySQL", "PostgreSQL"]
+    },
+    {
+      "id": "CSW204",
+      "name": "운영체제",
+      "credits": 3,
+      "category": "major_required",
+      "year": 2,
+      "semester": 2,
+      "prerequisites": ["CSW201"],
+      "description": "프로세스, 스레드, 메모리 관리, 파일 시스템, 동기화 등 운영체제 핵심 개념",
+      "skills": ["시스템 프로그래밍", "Linux", "동시성"]
+    },
+    {
+      "id": "CSW205",
+      "name": "컴퓨터네트워크",
+      "credits": 3,
+      "category": "major_required",
+      "year": 2,
+      "semester": 2,
+      "prerequisites": ["CSW102"],
+      "description": "TCP/IP 프로토콜 스택, HTTP, 소켓 프로그래밍, REST API 기초",
+      "skills": ["네트워크", "HTTP", "소켓 프로그래밍"]
+    },
+    {
+      "id": "CSW301",
+      "name": "소프트웨어공학",
+      "credits": 3,
+      "category": "major_required",
+      "year": 3,
+      "semester": 1,
+      "prerequisites": ["CSW202", "CSW203"],
+      "description": "요구사항 분석, 설계 패턴, 애자일 방법론, 테스트 주도 개발(TDD)",
+      "skills": ["소프트웨어 설계", "애자일", "TDD", "UML"]
+    },
+    {
+      "id": "CSW302",
+      "name": "웹프로그래밍",
+      "credits": 3,
+      "category": "major_required",
+      "year": 3,
+      "semester": 1,
+      "prerequisites": ["CSW205", "CSW203"],
+      "description": "HTML/CSS/JavaScript 기반 프론트엔드 및 Node.js/Python 기반 백엔드 풀스택 개발",
+      "skills": ["HTML", "CSS", "JavaScript", "REST API", "백엔드 개발"]
+    },
+    {
+      "id": "CSW303",
+      "name": "인공지능개론",
+      "credits": 3,
+      "category": "major_required",
+      "year": 3,
+      "semester": 1,
+      "prerequisites": ["CSW202", "GEN202"],
+      "description": "탐색, 제약 만족, 베이즈 추론, 머신러닝 기초 개념 및 Python 구현",
+      "skills": ["AI", "머신러닝", "Python", "수학적 모델링"]
+    },
+    {
+      "id": "CSW304",
+      "name": "머신러닝",
+      "credits": 3,
+      "category": "major_elective",
+      "year": 3,
+      "semester": 2,
+      "prerequisites": ["CSW303", "GEN202"],
+      "description": "지도학습, 비지도학습, 앙상블 기법 및 scikit-learn 실습",
+      "skills": ["머신러닝", "scikit-learn", "데이터 분석", "Python"]
+    },
+    {
+      "id": "CSW305",
+      "name": "딥러닝",
+      "credits": 3,
+      "category": "major_elective",
+      "year": 3,
+      "semester": 2,
+      "prerequisites": ["CSW304"],
+      "description": "신경망, CNN, RNN, Transformer 구조 및 PyTorch 실습",
+      "skills": ["딥러닝", "PyTorch", "신경망", "컴퓨터비전", "NLP"]
+    },
+    {
+      "id": "CSW306",
+      "name": "클라우드컴퓨팅",
+      "credits": 3,
+      "category": "major_elective",
+      "year": 3,
+      "semester": 2,
+      "prerequisites": ["CSW204", "CSW205"],
+      "description": "AWS/GCP 기반 클라우드 서비스, Docker, Kubernetes, CI/CD 파이프라인",
+      "skills": ["AWS", "Docker", "Kubernetes", "DevOps", "CI/CD"]
+    },
+    {
+      "id": "CSW307",
+      "name": "데이터분석및시각화",
+      "credits": 3,
+      "category": "major_elective",
+      "year": 3,
+      "semester": 1,
+      "prerequisites": ["CSW201", "GEN202"],
+      "description": "Pandas, NumPy, Matplotlib, Seaborn을 활용한 데이터 분석 및 시각화",
+      "skills": ["데이터 분석", "Pandas", "NumPy", "시각화", "Python"]
+    },
+    {
+      "id": "CSW401",
+      "name": "캡스톤디자인1",
+      "credits": 3,
+      "category": "major_required",
+      "year": 4,
+      "semester": 1,
+      "prerequisites": ["CSW301", "CSW302"],
+      "description": "실제 문제를 해결하는 팀 기반 소프트웨어 프로젝트 기획 및 설계",
+      "skills": ["프로젝트 관리", "팀워크", "문제 해결", "발표"]
+    },
+    {
+      "id": "CSW402",
+      "name": "캡스톤디자인2",
+      "credits": 3,
+      "category": "major_required",
+      "year": 4,
+      "semester": 2,
+      "prerequisites": ["CSW401"],
+      "description": "캡스톤디자인1에서 설계한 프로젝트를 완성하고 최종 발표 및 보고서 제출",
+      "skills": ["프로젝트 완성", "문서화", "발표", "팀워크"]
+    },
+    {
+      "id": "CSW403",
+      "name": "자연어처리",
+      "credits": 3,
+      "category": "major_elective",
+      "year": 4,
+      "semester": 1,
+      "prerequisites": ["CSW305"],
+      "description": "텍스트 전처리, 언어 모델, BERT, GPT 계열 LLM 파인튜닝 및 LangChain 활용",
+      "skills": ["NLP", "LLM", "LangChain", "BERT", "GPT", "Python"]
+    },
+    {
+      "id": "CSW404",
+      "name": "소프트웨어아키텍처",
+      "credits": 3,
+      "category": "major_elective",
+      "year": 4,
+      "semester": 1,
+      "prerequisites": ["CSW301"],
+      "description": "마이크로서비스, 이벤트 기반 아키텍처, API 게이트웨이, 분산 시스템 설계",
+      "skills": ["시스템 설계", "MSA", "백엔드 아키텍처", "분산 시스템"]
+    }
+  ]
+}

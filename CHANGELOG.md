@@ -1,5 +1,14 @@
 # 변경 이력 (CHANGELOG)
 
+## [2026-09-10]
+- **대상 파일:** `data/schema/curriculum_schema.json`, `data/schema/extracurricular_schema.json`, `data/mock/sample_curriculum.json`, `data/mock/sample_extracurricular.json`, `scripts/ingest.py`, `tests/test_data_pipeline.py`
+- **수정 이유:** Milestone 1 구현 - 학사/비교과 데이터 표준 스키마 정의, 모의 데이터셋 구축, 벡터 DB 적재 파이프라인 및 무결성 검증 테스트 작성
+- **변경 내용:**
+  - JSON Schema 2개 생성 (교과목/졸업요건 스키마, 비교과 스키마)
+  - 컴퓨터소프트웨어학과 기준 1~4학년 교과목(22개, 선수과목 DAG 포함) 및 비교과 프로그램(10개) 모의 데이터 구축
+  - ChromaDB 적재 스크립트 (`scripts/ingest.py`) 작성
+  - pytest 기반 무결성 검증 테스트 14개 작성 및 전부 통과 확인 (14/14 passed)
+
 ## [2026-09-09]
 - **대상 파일:** `.gitignore`, `파일/` 디렉토리
 - **수정 이유:** 교내 내부 행정 서식 문서의 GitHub 원격 노출 차단

@@ -1,0 +1,89 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "ExtracurricularData",
+  "description": "비교과 프로그램 데이터 표준 스키마 (특강, 멘토링, 공모전, 자격증, 봉사활동 등)",
+  "type": "object",
+  "required": ["programs"],
+  "properties": {
+    "programs": {
+      "type": "array",
+      "description": "비교과 프로그램 목록",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "category", "target_year"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "프로그램 고유 코드 (예: EXT-CERT-001)"
+          },
+          "name": {
+            "type": "string",
+            "description": "프로그램명"
+          },
+          "category": {
+            "type": "string",
+            "description": "프로그램 유형",
+            "enum": [
+              "certification",
+              "competition",
+              "mentoring",
+              "seminar",
+              "internship",
+              "volunteer",
+              "language",
+              "other"
+            ]
+          },
+          "target_year": {
+            "type": "array",
+            "description": "권장 참여 학년 (복수 허용, 예: [1, 2])",
+            "items": {
+              "type": "integer",
+              "minimum": 1,
+              "maximum": 4
+            },
+            "minItems": 1
+          },
+          "semester": {
+            "type": "integer",
+            "description": "운영 학기 (1: 1학기, 2: 2학기, 0: 연중/수시)",
+            "enum": [0, 1, 2],
+            "default": 0
+          },
+          "duration_weeks": {
+            "type": "integer",
+            "description": "프로그램 기간 (주 단위, 0이면 단발성)",
+            "minimum": 0,
+            "default": 0
+          },
+          "description": {
+            "type": "string",
+            "description": "프로그램 설명 (RAG 벡터 임베딩 대상)"
+          },
+          "skills": {
+            "type": "array",
+            "description": "프로그램을 통해 습득 가능한 역량/기술 키워드 (LLM 목표 매핑에 활용)",
+            "items": { "type": "string" },
+            "default": []
+          },
+          "related_careers": {
+            "type": "array",
+            "description": "이 프로그램이 도움이 되는 진로 유형 (예: 백엔드 개발자, AI 연구원)",
+            "items": { "type": "string" },
+            "default": []
+          },
+          "is_graduation_requirement": {
+            "type": "boolean",
+            "description": "졸업 인증 요건 해당 여부",
+            "default": false
+          },
+          "host": {
+            "type": "string",
+            "description": "운영 주체 (예: 취업지원처, 공학교육혁신센터)",
+            "default": ""
+          }
+        }
+      }
+    }
+  }
+}

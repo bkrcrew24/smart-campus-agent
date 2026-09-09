@@ -1,0 +1,117 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "CurriculumData",
+  "description": "학사 요람 데이터 표준 스키마 (교과목, 선수과목 체계, 졸업 요건)",
+  "type": "object",
+  "required": ["department", "graduation_requirements", "courses"],
+  "properties": {
+    "department": {
+      "type": "object",
+      "description": "학과 정보",
+      "required": ["id", "name", "college"],
+      "properties": {
+        "id": { "type": "string", "description": "학과 코드 (예: CSW)" },
+        "name": { "type": "string", "description": "학과명 (예: 컴퓨터소프트웨어학과)" },
+        "college": { "type": "string", "description": "소속 단과대학" }
+      }
+    },
+    "graduation_requirements": {
+      "type": "object",
+      "description": "졸업 이수 요건",
+      "required": ["total_credits", "breakdown"],
+      "properties": {
+        "total_credits": {
+          "type": "integer",
+          "description": "졸업에 필요한 총 학점",
+          "minimum": 1
+        },
+        "breakdown": {
+          "type": "object",
+          "description": "이수 구분별 요구 학점",
+          "required": ["major_required", "major_elective", "general_required", "general_elective"],
+          "properties": {
+            "major_required": { "type": "integer", "description": "전공필수 학점" },
+            "major_elective": { "type": "integer", "description": "전공선택 학점" },
+            "general_required": { "type": "integer", "description": "교양필수 학점" },
+            "general_elective": { "type": "integer", "description": "교양선택 학점" },
+            "free_elective": { "type": "integer", "description": "자유선택 학점", "default": 0 }
+          }
+        },
+        "minimum_gpa": {
+          "type": "number",
+          "description": "졸업 최소 성적 (4.5 만점 기준)",
+          "minimum": 0.0,
+          "maximum": 4.5
+        },
+        "required_certifications": {
+          "type": "array",
+          "description": "졸업 인증 요건 목록 (예: 영어인증, 봉사시간)",
+          "items": {
+            "type": "object",
+            "required": ["name", "description"],
+            "properties": {
+              "name": { "type": "string" },
+              "description": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "courses": {
+      "type": "array",
+      "description": "교과목 목록",
+      "items": {
+        "type": "object",
+        "required": ["id", "name", "credits", "category", "year", "semester"],
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "교과목 코드 (예: CSW101)"
+          },
+          "name": {
+            "type": "string",
+            "description": "교과목명"
+          },
+          "credits": {
+            "type": "integer",
+            "description": "학점",
+            "minimum": 1,
+            "maximum": 6
+          },
+          "category": {
+            "type": "string",
+            "description": "이수 구분",
+            "enum": ["major_required", "major_elective", "general_required", "general_elective", "free_elective"]
+          },
+          "year": {
+            "type": "integer",
+            "description": "권장 수강 학년",
+            "minimum": 1,
+            "maximum": 4
+          },
+          "semester": {
+            "type": "integer",
+            "description": "개설 학기 (1: 1학기, 2: 2학기, 0: 연중)",
+            "enum": [0, 1, 2]
+          },
+          "prerequisites": {
+            "type": "array",
+            "description": "선수과목 코드 목록. 역산(Backtracking) 엔진이 DAG 구성 시 참조하는 핵심 필드.",
+            "items": { "type": "string" },
+            "default": []
+          },
+          "description": {
+            "type": "string",
+            "description": "교과목 설명 (RAG 벡터 임베딩 대상)"
+          },
+          "skills": {
+            "type": "array",
+            "description": "교과목을 통해 습득 가능한 역량/기술 키워드 (LLM 목표 매핑에 활용)",
+            "items": { "type": "string" },
+            "default": []
+          }
+        }
+      }
+    }
+  }
+}
