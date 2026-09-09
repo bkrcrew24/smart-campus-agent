@@ -51,3 +51,6 @@ chroma_db/
 *~
 .DS_Store
 Thumbs.db
+
+# Campus internal administrative documents
+파일/
