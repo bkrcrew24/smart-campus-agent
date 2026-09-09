@@ -4,14 +4,14 @@
 
 ---
 
-## 📌 프로젝트 개요 (Overview)
+## 1. 프로젝트 개요 (Overview)
 대학 생활 중 많은 학생들이 구체적인 진로 목표(예: 특정 직무 취업, 대학원 진학 등)를 세우더라도, 이를 달성하기 위해 어떤 전공/교양 과목을 순서대로 이수해야 하는지, 어떤 비교과 활동(특강, 멘토링, 공모전 등)에 참여해야 하는지 체계적으로 파악하기 어렵습니다.
 
 **Goal-Driven Smart Campus Agent**는 학생이 설정한 최종 목표를 기반으로 필요 요건을 역산(Backtracking)하여 단계별 최적 로드맵을 자동 수립하고, 학사 변동(과목 미이수, 수강신청 실패, 진로 변경 등) 발생 시 능동적으로 대안을 재계획(Re-planning)해주는 풀스택 AI 에이전트 서비스입니다.
 
 ---
 
-## 🚀 주요 핵심 기능 (Key Features)
+## 2. 주요 핵심 기능 (Key Features)
 
 1. **목표 기반 역산 로드맵 생성 (Goal Backtracking Engine)**
    - 최종 목표에 필요한 역량 및 졸업 요건을 분석하여 잔여 학기별 최적의 이수 테크트리 생성
@@ -30,7 +30,7 @@
 
 ---
 
-## 🛠 기술 스택 (Tech Stack)
+## 3. 기술 스택 (Tech Stack)
 
 - **AI / Agent Core:** LangChain, LangGraph, OpenAI / Anthropic / Gemini LLM
 - **Vector DB / RAG:** Chroma / SQLite-Vec
@@ -40,7 +40,7 @@
 
 ---
 
-## 📁 디렉토리 구조 (Project Structure)
+## 4. 디렉토리 구조 (Project Structure)
 
 ```text
 ├── AGENTS.md               # 에이전트 시스템 프롬프트 및 코딩 원칙
@@ -61,7 +61,7 @@
 
 ---
 
-## 📅 마일스톤 및 일정 요약 (Roadmap)
+## 5. 마일스톤 및 일정 요약 (Roadmap)
 
 - **Milestone 1 (2026.09 ~ 2026.10):** 학사/비교과 데이터 스키마 정의 및 수집 파이프라인 구축
 - **Milestone 2 (2026.10 ~ 2026.11):** LangGraph 멀티 에이전트 코어 및 FastAPI 백엔드 기반 구축
