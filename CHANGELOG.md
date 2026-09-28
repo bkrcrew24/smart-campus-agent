@@ -1,5 +1,12 @@
 # 변경 이력 (CHANGELOG)
 
+## [2026-09-28]
+- **대상 파일:** PROJECT_PLAN.md, MILESTONES.md, README.md, docs/Smart Campus Agent 전체 개발계획서.md 및 TXT·PDF
+- **수정 이유:** 최종 제출일 2026-12-18에 맞춰 전체 개발 일정을 조정하고, API 확인·대체 자료 수집 방안 및 교수님 질문을 명확히 함.
+- **변경 내용:** 개발·검증·배포·제출 준비를 2026-12-17까지 완료하도록 일정 통일. 학교 API 제공 여부 우선 확인, 미제공·정보 부족 시 공식 사이트 문서와 교칙 수집·DB 구축 방안 반영. 교수님 피드백 항목을 질문형으로 수정하고, 교수님용 문서의 제목·본문·꼬리말·파일명에서 버전 표시 제거.
+- **이전 문서:** docs의 v0.1 문서 3종을 버전 표시 없는 최신 문서 3종으로 교체. 과거 내용은 Git 이력에서 확인할 수 있음.
+- **이력 해석:** 아래 2026-09-09의 겨울방학 개발 일정은 변경 이전 기록이며, 현재 일정은 이 항목과 수정된 계획 문서를 기준으로 함.
+
 ## [2026-09-10]
 - **대상 파일:** `data/schema/curriculum_schema.json`, `data/schema/extracurricular_schema.json`, `data/mock/sample_curriculum.json`, `data/mock/sample_extracurricular.json`, `scripts/ingest.py`, `tests/test_data_pipeline.py`
 - **수정 이유:** Milestone 1 구현 - 학사/비교과 데이터 표준 스키마 정의, 모의 데이터셋 구축, 벡터 DB 적재 파이프라인 및 무결성 검증 테스트 작성
